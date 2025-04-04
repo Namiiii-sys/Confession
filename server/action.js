@@ -2,25 +2,18 @@
 import { PrismaClient } from "@prisma/client"
 
 const prisma = new PrismaClient();
-const db = [
-    {
-        content:"Hi namita and ria",
-        date: "19 Feb 2025"
-    }
-]
-
 
 export async function getPosts() {
-    const posts = prisma.confessions.findMany()
+    const posts = await prisma.confessions.findMany()
     return posts 
 }
 
-export async function createPosts(content) {
-    const date = new Data().toDateString()
+export async function createPost(content) {
+    const date = new Date().toDateString()
     
     return await prisma.confessions.create({
-        data:{
-            content:content,
+        data: {
+            content: content,
             date: date
         }
     })
