@@ -132,7 +132,7 @@ function Card({ cid, content: initialContent, date }) {
           ) : (
             <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3">
               <p className="text-white text-sm sm:text-base">
-                Posted on : {date}
+                Posted on {date}
               </p>
 
               {cid && (
